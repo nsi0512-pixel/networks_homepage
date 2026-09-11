@@ -1,7 +1,7 @@
 import PageHeader from "../components/PageHeader"
 
-const ADDRESS = "충북 음성군 음성읍 용광로48번길 10, 상가동 2층"
-const MAP_QUERY = "충북 음성군 음성읍 용광로48번길 10"
+const ADDRESS = "충북 음성군 음성읍 반기문로 45-15 상가동1층 101호"
+const MAP_QUERY = "충북 음성군 음성읍 반기문로 45-15"
 const PHONE = "043-878-8888"
 
 const CONTACT_CARDS = [
