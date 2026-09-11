@@ -61,7 +61,7 @@ export default function ProjectHistoryCard() {
         대한민국 신지식인 선정
       </div>
 
-      <div className="overflow-hidden rounded-lg border border-hairline bg-canvas shadow-[0_1px_3px_rgba(0,55,112,0.08)]">
+      <div className="overflow-hidden rounded-lg border border-hairline bg-canvas shadow-level-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-level-2">
         <div className="relative aspect-video">
           <NetworkVisual />
           <span className="absolute right-3 top-3 rounded-full bg-canvas/15 px-2 py-1 text-[10px] font-normal tracking-[0.1px] text-on-primary backdrop-blur">
@@ -74,7 +74,7 @@ export default function ProjectHistoryCard() {
           </div>
         </div>
 
-        <div className="p-8">
+        <div className="p-6 sm:p-8">
           <h3 className="text-[22px] font-light leading-[1.1] tracking-[-0.22px] text-ink">
             OO종합병원 통합 네트워크 · CCTV 구축 공사
           </h3>
@@ -108,15 +108,26 @@ export default function ProjectHistoryCard() {
             ))}
           </div>
 
-          <a
-            href="#projects"
-            className="mt-5 flex items-center justify-center gap-1 text-[15px] font-light text-primary hover:text-primary-deep"
+          <button
+            type="button"
+            onClick={() =>
+              document.getElementById("project-history")?.scrollIntoView({ behavior: "smooth" })
+            }
+            className="group mt-3 flex min-h-11 w-full items-center justify-center gap-1 text-[15px] font-light text-primary transition-colors hover:text-primary-deep"
           >
             시공사례 더 보기
-            <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              className="transition-transform duration-200 group-hover:translate-x-0.5"
+            >
               <path d="M4 10h12M11 5l5 5-5 5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-          </a>
+          </button>
         </div>
       </div>
     </div>

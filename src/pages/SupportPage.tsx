@@ -39,12 +39,12 @@ export default function SupportPage() {
         description="견적 문의, A/S 및 기타 문의사항은 아래 연락처로 연락해 주세요. 현장 상황에 맞는 최적의 시공 방안을 안내해 드립니다."
       />
 
-      <section className="mx-auto max-w-[1200px] px-6 py-16 lg:py-24">
+      <section className="mx-auto max-w-[1200px] px-5 py-12 sm:px-6 sm:py-16 lg:py-24">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {CONTACT_CARDS.map((card) => (
             <div
               key={card.label}
-              className="rounded-lg border border-hairline bg-canvas p-8 shadow-[0_1px_3px_rgba(0,55,112,0.08)]"
+              className="rounded-lg border border-hairline bg-canvas p-6 shadow-level-1 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary-subdued hover:shadow-level-2 sm:p-8"
             >
               <span className="inline-flex items-center rounded-full bg-primary-subdued px-2 py-1 text-[10px] font-normal tracking-[0.1px] text-primary-deep">
                 {card.label}
@@ -54,15 +54,21 @@ export default function SupportPage() {
                 style={{ fontFeatureSettings: '"tnum"' }}
               >
                 {card.href ? (
-                  <a href={card.href} className="hover:text-primary">
+                  <a
+                    href={card.href}
+                    className="inline-flex min-h-11 items-center transition-colors hover:text-primary"
+                  >
                     {card.value}
                   </a>
                 ) : card.to ? (
-                  <Link to={card.to} className="hover:text-primary">
+                  <Link
+                    to={card.to}
+                    className="inline-flex min-h-11 items-center transition-colors hover:text-primary"
+                  >
                     {card.value}
                   </Link>
                 ) : (
-                  card.value
+                  <span className="inline-flex min-h-11 items-center">{card.value}</span>
                 )}
               </p>
               <p className="mt-2 break-keep text-[13px] font-normal tracking-[-0.39px] text-ink-mute">
@@ -80,7 +86,7 @@ export default function SupportPage() {
             오시는길
           </h2>
 
-          <div className="mt-8 overflow-hidden rounded-lg border border-hairline bg-canvas shadow-[0_1px_3px_rgba(0,55,112,0.08)]">
+          <div className="mt-8 overflow-hidden rounded-lg border border-hairline bg-canvas shadow-level-1">
             <iframe
               title="한누리광통신 위치 지도"
               src={`https://maps.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&hl=ko&z=17&output=embed`}
@@ -89,7 +95,7 @@ export default function SupportPage() {
               referrerPolicy="no-referrer-when-downgrade"
             />
 
-            <dl className="grid gap-6 border-t border-hairline p-8 sm:grid-cols-2">
+            <dl className="grid gap-6 border-t border-hairline p-6 sm:grid-cols-2 sm:p-8">
               <div>
                 <dt className="text-[13px] font-normal tracking-[-0.39px] text-ink-mute">주소</dt>
                 <dd className="mt-1 break-keep text-[15px] font-light leading-[1.4] text-ink">
@@ -102,7 +108,10 @@ export default function SupportPage() {
                   className="mt-1 text-[15px] font-light leading-[1.4] text-ink"
                   style={{ fontFeatureSettings: '"tnum"' }}
                 >
-                  <a href={`tel:${PHONE}`} className="hover:text-primary">
+                  <a
+                    href={`tel:${PHONE}`}
+                    className="inline-flex min-h-11 items-center transition-colors hover:text-primary"
+                  >
                     {PHONE}
                   </a>
                 </dd>
@@ -117,7 +126,7 @@ export default function SupportPage() {
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-full border border-primary bg-canvas px-4 py-2 text-base font-normal text-primary transition-colors hover:bg-primary-subdued/30"
+                className="inline-flex min-h-11 items-center rounded-full border border-primary bg-canvas px-5 py-2.5 text-base font-normal text-primary transition-all duration-200 hover:-translate-y-px hover:bg-primary-subdued/30 active:translate-y-0"
               >
                 {link.label}
               </a>

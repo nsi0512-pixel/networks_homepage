@@ -9,11 +9,13 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ variant, title, description, tags }: ServiceCardProps) {
   return (
-    <div className="overflow-hidden rounded-lg border border-hairline bg-canvas shadow-[0_1px_3px_rgba(0,55,112,0.08)]">
-      <div className="aspect-[4/3] w-full">
-        <ServiceVisual variant={variant} />
+    <div className="group overflow-hidden rounded-lg border border-hairline bg-canvas shadow-level-1 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary-subdued hover:shadow-level-2">
+      <div className="aspect-[4/3] w-full overflow-hidden">
+        <div className="h-full w-full transition-transform duration-300 group-hover:scale-105">
+          <ServiceVisual variant={variant} />
+        </div>
       </div>
-      <div className="p-8">
+      <div className="p-6 sm:p-8">
         <h3 className="text-[20px] font-light leading-[1.4] tracking-[-0.2px] text-ink">{title}</h3>
         <p className="mt-2 break-keep text-[15px] font-light leading-[1.4] text-ink-mute">
           {description}

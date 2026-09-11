@@ -40,7 +40,7 @@ export default function BusinessPage() {
         title="사업소개"
         description="공장·병원·학교 등 다양한 현장에 최적화된 광케이블 배선, 네트워크 통합, IP CCTV 및 관제 시스템 구축 사업을 소개합니다."
       />
-      <div className="mx-auto max-w-[1200px] px-6 py-16 lg:py-24">
+      <div className="mx-auto max-w-[1200px] px-5 py-12 sm:px-6 sm:py-16 lg:py-24">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {SERVICES.map((service) => (
             <ServiceCard key={service.title} {...service} />

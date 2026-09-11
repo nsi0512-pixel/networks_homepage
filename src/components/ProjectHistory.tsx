@@ -11,8 +11,8 @@ const CLIENTS = [
 
 export default function ProjectHistory() {
   return (
-    <section className="border-t border-hairline bg-canvas-soft">
-      <div className="mx-auto max-w-[1200px] px-6 py-16 lg:py-24">
+    <section id="project-history" className="scroll-mt-20 border-t border-hairline bg-canvas-soft">
+      <div className="mx-auto max-w-[1200px] px-5 py-12 sm:px-6 sm:py-16 lg:py-24">
         <span className="inline-flex items-center gap-1.5 rounded-full bg-primary-subdued px-2 py-1 text-[10px] font-normal tracking-[0.1px] text-primary-deep">
           TRACK RECORD
         </span>
@@ -27,7 +27,7 @@ export default function ProjectHistory() {
           {CLIENTS.map((client) => (
             <div
               key={client.name}
-              className="rounded-lg border border-hairline bg-canvas p-6 shadow-[0_1px_3px_rgba(0,55,112,0.08)]"
+              className="rounded-lg border border-hairline bg-canvas p-5 shadow-level-1 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary-subdued hover:shadow-level-2 sm:p-6"
             >
               <div className="flex h-11 w-11 items-center justify-center rounded-md bg-primary-subdued text-[12px] font-normal tracking-[-0.1px] text-primary-deep">
                 {client.initials}

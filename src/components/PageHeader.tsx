@@ -7,7 +7,7 @@ interface PageHeaderProps {
 export default function PageHeader({ eyebrow, title, description }: PageHeaderProps) {
   return (
     <div className="border-b border-hairline bg-canvas-soft">
-      <div className="mx-auto max-w-[1200px] px-6 py-16 lg:py-20">
+      <div className="mx-auto max-w-[1200px] px-5 py-12 sm:px-6 sm:py-16 lg:py-20">
         <span className="inline-flex items-center gap-1.5 rounded-full bg-primary-subdued px-2 py-1 text-[10px] font-normal tracking-[0.1px] text-primary-deep">
           {eyebrow}
         </span>

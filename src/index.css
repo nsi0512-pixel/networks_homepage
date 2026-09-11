@@ -46,6 +46,21 @@ html {
   scroll-behavior: smooth;
 }
 
+/* 운영체제에서 '동작 줄이기'를 켠 사용자에게는 전환 효과를 끈다. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 body {
   font-family: var(--font-sans);
   font-weight: 300;

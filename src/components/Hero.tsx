@@ -13,7 +13,7 @@ export default function Hero() {
     <section id="top" className="relative isolate overflow-hidden bg-canvas">
       <GradientMesh />
 
-      <div className="mx-auto grid max-w-[1200px] items-center gap-14 px-6 py-16 lg:grid-cols-2 lg:gap-10 lg:py-24">
+      <div className="mx-auto grid max-w-[1200px] items-center gap-12 px-5 py-12 sm:px-6 sm:py-16 lg:grid-cols-2 lg:gap-10 lg:py-24">
         <div>
           <span className="inline-flex items-center gap-1.5 rounded-full bg-primary-subdued px-2 py-1 text-[10px] font-normal tracking-[0.1px] text-primary-deep">
             광통신 · 네트워크 · CCTV 통합 인프라
@@ -32,13 +32,13 @@ export default function Hero() {
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <Link
               to="/about"
-              className="rounded-full bg-primary px-4 py-2 text-base font-normal text-on-primary transition-colors hover:bg-primary-press"
+              className="inline-flex min-h-11 items-center whitespace-nowrap rounded-full bg-primary px-5 py-2.5 text-base font-normal text-on-primary shadow-level-1 transition-all duration-200 hover:-translate-y-px hover:bg-primary-deep hover:shadow-level-2 active:translate-y-0 active:bg-primary-press"
             >
               회사소개
             </Link>
             <Link
               to="/quote"
-              className="rounded-full border border-primary bg-canvas px-4 py-2 text-base font-normal text-primary transition-colors hover:bg-primary-subdued/30"
+              className="inline-flex min-h-11 items-center whitespace-nowrap rounded-full border border-primary bg-canvas px-5 py-2.5 text-base font-normal text-primary transition-all duration-200 hover:-translate-y-px hover:bg-primary-subdued/30 active:translate-y-0"
             >
               무료 견적문의
             </Link>
@@ -49,7 +49,7 @@ export default function Hero() {
               <div key={stat.label}>
                 <dt className="sr-only">{stat.label}</dt>
                 <dd
-                  className="text-[26px] font-light leading-[1.12] tracking-[-0.26px] text-ink"
+                  className="text-[22px] font-light leading-[1.12] tracking-[-0.26px] text-ink sm:text-[26px]"
                   style={{ fontFeatureSettings: '"tnum"' }}
                 >
                   {stat.value}

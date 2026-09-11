@@ -110,17 +110,18 @@ export default function QuotePage() {
         description="현장 상황을 알려주시면 담당자가 확인 후 연락드립니다. 급한 문의는 대표전화로 연락 주세요."
       />
 
-      <section className="mx-auto max-w-[760px] px-6 py-16 lg:py-24">
+      <section className="mx-auto max-w-[760px] px-5 py-12 sm:px-6 sm:py-16 lg:py-24">
         <form
           onSubmit={handleSubmit}
           noValidate
-          className="rounded-lg border border-hairline bg-canvas p-8 shadow-[0_1px_3px_rgba(0,55,112,0.08)] lg:p-12"
+          className="rounded-lg border border-hairline bg-canvas p-6 shadow-level-1 sm:p-8 lg:p-12"
         >
           <div className="space-y-6">
             {FIELDS.map((field) => {
               const error = errors[field.name]
-              const inputClass = `w-full rounded-sm border bg-canvas px-3 py-2 text-[15px] font-light leading-[1.4] text-ink outline-none transition-colors placeholder:text-ink-mute/60 ${
-                error ? "border-ruby" : "border-hairline-input focus:border-primary"
+              // 모바일 Safari가 16px 미만 입력 필드에 포커스할 때 화면을 확대해버리므로 기본 16px.
+              const inputClass = `w-full min-h-10 rounded-sm border bg-canvas px-3 py-2.5 text-base font-light leading-[1.4] text-ink outline-none transition-colors placeholder:text-ink-mute/60 sm:text-[15px] ${
+                error ? "border-ruby" : "border-hairline-input hover:border-primary-soft focus:border-primary"
               }`
 
               return (
@@ -186,13 +187,16 @@ export default function QuotePage() {
           <div className="mt-10 flex flex-wrap items-center gap-4 border-t border-hairline pt-8">
             <button
               type="submit"
-              className="rounded-full bg-primary px-4 py-2 text-base font-normal text-on-primary transition-colors hover:bg-primary-press"
+              className="inline-flex min-h-11 items-center rounded-full bg-primary px-5 py-2.5 text-base font-normal text-on-primary shadow-level-1 transition-all duration-200 hover:-translate-y-px hover:bg-primary-deep hover:shadow-level-2 active:translate-y-0 active:bg-primary-press"
             >
               문의 보내기
             </button>
             <p className="text-[13px] font-normal tracking-[-0.39px] text-ink-mute">
               전화 문의{" "}
-              <a href={`tel:${PHONE}`} className="text-primary hover:text-primary-deep">
+              <a
+                href={`tel:${PHONE}`}
+                className="inline-flex min-h-11 items-center text-primary transition-colors hover:text-primary-deep"
+              >
                 {PHONE}
               </a>
             </p>

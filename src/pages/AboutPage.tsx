@@ -25,8 +25,8 @@ export default function AboutPage() {
         description="한누리광통신은 광통신·네트워크·CCTV 통합 인프라 구축을 전문으로 하는 기업입니다. 공장·병원·학교 등 다양한 현장에서 축적한 시공 경험을 바탕으로 안정적인 통신 환경을 제공합니다."
       />
 
-      <section className="mx-auto max-w-[1200px] px-6 py-16 lg:py-24">
-        <div className="grid gap-10 overflow-hidden rounded-lg border border-hairline bg-canvas p-8 shadow-[0_1px_3px_rgba(0,55,112,0.08)] lg:grid-cols-[1fr_320px] lg:gap-14 lg:p-12">
+      <section className="mx-auto max-w-[1200px] px-5 py-12 sm:px-6 sm:py-16 lg:py-24">
+        <div className="grid gap-10 overflow-hidden rounded-lg border border-hairline bg-canvas p-6 shadow-level-1 sm:p-8 lg:grid-cols-[1fr_320px] lg:gap-14 lg:p-12">
           <div>
             <span className="inline-flex items-center gap-1.5 rounded-full bg-primary-subdued px-2 py-1 text-[10px] font-normal tracking-[0.1px] text-primary-deep">
               GREETING · CEO MESSAGE
@@ -52,7 +52,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="mt-6 rounded-lg border border-hairline bg-canvas-soft p-8">
+        <div className="mt-6 rounded-lg border border-hairline bg-canvas-soft p-6 sm:p-8">
           <dl className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {COMPANY_INFO.map((item) => (
               <div key={item.label}>
