@@ -5,6 +5,22 @@ import PageHeader from "../components/PageHeader"
 const QUOTE_EMAIL = "hanurinetworks@example.com"
 const PHONE = "043-878-8888"
 
+// 견적 문의 전송 지점. 백엔드가 없는 동안은 방문자의 메일 앱을 열어 내용을 채워준다.
+// 추후 Supabase 연동 시 이 함수 본문만 insert 호출로 교체하면 된다.
+async function submitQuote(values: Record<FieldName, string>) {
+  const body = [
+    `기관/회사명: ${values.company}`,
+    `담당자 성함: ${values.name}`,
+    `연락처: ${values.contact}`,
+    "",
+    "견적의뢰 내용",
+    values.message,
+  ].join("\n")
+
+  const subject = `[견적의뢰] ${values.company} - ${values.name}`
+  window.location.href = `mailto:${QUOTE_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+}
+
 type FieldName = "company" | "name" | "contact" | "message"
 
 const FIELDS: {
@@ -64,7 +80,7 @@ export default function QuotePage() {
     if (errors[name]) setErrors((prev) => ({ ...prev, [name]: undefined }))
   }
 
-  function handleSubmit(event: React.FormEvent) {
+  async function handleSubmit(event: React.FormEvent) {
     event.preventDefault()
 
     const nextErrors: Partial<Record<FieldName, string>> = {}
@@ -82,19 +98,7 @@ export default function QuotePage() {
       return
     }
 
-    const body = [
-      `기관/회사명: ${form.company}`,
-      `담당자 성함: ${form.name}`,
-      `연락처: ${form.contact}`,
-      "",
-      "견적의뢰 내용",
-      form.message,
-    ].join("\n")
-
-    window.location.href = `mailto:${QUOTE_EMAIL}?subject=${encodeURIComponent(
-      `[견적의뢰] ${form.company} - ${form.name}`,
-    )}&body=${encodeURIComponent(body)}`
-
+    await submitQuote(form)
     setSent(true)
   }
 
