@@ -2,14 +2,17 @@
 
 공장·병원·학교 등 산업 및 공공시설을 위한 광통신·네트워크·CCTV 통합 인프라 구축 전문기업 홈페이지입니다.
 
-**배포 사이트**: https://nsi0512-pixel.github.io/networks_homepage/
-(GitHub repo: https://github.com/nsi0512-pixel/networks_homepage — `main` 브랜치에 푸시하면
-[.github/workflows/deploy.yml](.github/workflows/deploy.yml)이 자동으로 빌드 후 GitHub Pages에 배포합니다)
+**배포 사이트 (메인)**: https://hanurinetworks.vercel.app — Vercel, 클린 URL(`/about` 형태)
+**배포 사이트 (보조)**: https://nsi0512-pixel.github.io/networks_homepage/ — GitHub Pages, 해시 URL(`/#/about` 형태)
 
-> GitHub Pages는 정적 호스팅이라 서버 라우팅 리라이트가 없어서, 딥링크 새로고침이 깨지지 않도록
-> 라우터를 `HashRouter`로 설정해뒀습니다(URL이 `/#/about` 형태). 나중에 자체 도메인이나
-> Vercel/Netlify 같은 SPA 리라이트를 지원하는 호스팅으로 옮기면 `src/main.tsx`에서
-> `BrowserRouter`로 바꿔서 깨끗한 URL을 쓸 수 있습니다.
+(GitHub repo: https://github.com/nsi0512-pixel/networks_homepage — `main` 브랜치에 푸시하면
+Vercel과 [.github/workflows/deploy.yml](.github/workflows/deploy.yml)의 GitHub Actions가 각각 자동으로
+빌드 후 두 곳 모두에 배포합니다)
+
+> 두 호스팅을 동시에 지원하기 위해 빌드 타깃에 따라 라우터가 자동으로 바뀝니다
+> ([vite.config.ts](vite.config.ts)의 `__USE_HASH_ROUTER__`). Vercel은 SPA 리라이트
+> ([vercel.json](vercel.json))를 지원하므로 `BrowserRouter` + 루트 경로, GitHub Pages는
+> 리라이트가 없으므로 `HashRouter` + `/networks_homepage/` 서브경로를 사용합니다.
 
 ## 기술 스택
 
@@ -48,7 +51,7 @@ npm run build
 ## 진행 상황
 
 - [x] 메인(소개) 페이지 — 히어로(좌측 메시지 + 우측 공사이력 카드) + 시공 이력 카드 섹션
-- [x] 사업소개 페이지 — 4개 서비스 카드
-- [ ] 회사소개 페이지 — 헤더만 있음, 상세 콘텐츠 준비 중
+- [x] 사업소개 페이지 — 4개 서비스 카드(설명 + 세부 항목 태그)
+- [x] 회사소개 페이지 — 인사말(CEO 메시지) + 회사 정보. 연혁·보유 인증은 준비 중
 - [ ] 고객지원 페이지 — 연락처만 있음, 견적문의 폼/FAQ 준비 중
-- [x] GitHub Pages 배포 자동화 (GitHub Actions)
+- [x] 배포 자동화 — Vercel + GitHub Pages(GitHub Actions)
