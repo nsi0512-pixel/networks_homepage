@@ -48,12 +48,12 @@ export default function Header() {
           >
             043-878-8888
           </a>
-          <a
-            href="#quote"
+          <Link
+            to="/quote"
             className="rounded-full bg-primary px-4 py-2 text-base font-normal text-on-primary transition-colors hover:bg-primary-press"
           >
             견적의뢰
-          </a>
+          </Link>
         </div>
       </div>
     </header>

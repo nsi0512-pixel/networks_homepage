@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import GradientMesh from "./GradientMesh"
 import ProjectHistoryCard from "./ProjectHistoryCard"
 
@@ -29,18 +30,18 @@ export default function Hero() {
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-4">
-            <a
-              href="#about"
+            <Link
+              to="/about"
               className="rounded-full bg-primary px-4 py-2 text-base font-normal text-on-primary transition-colors hover:bg-primary-press"
             >
               회사소개
-            </a>
-            <a
-              href="#quote"
+            </Link>
+            <Link
+              to="/quote"
               className="rounded-full border border-primary bg-canvas px-4 py-2 text-base font-normal text-primary transition-colors hover:bg-primary-subdued/30"
             >
               무료 견적문의
-            </a>
+            </Link>
           </div>
 
           <dl className="mt-12 grid max-w-md grid-cols-3 gap-4 border-t border-hairline pt-8">

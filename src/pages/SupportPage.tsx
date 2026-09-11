@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import PageHeader from "../components/PageHeader"
 
 const ADDRESS = "충북 음성군 음성읍 반기문로 45-15 상가동1층 101호"
@@ -19,6 +20,7 @@ const CONTACT_CARDS = [
   {
     label: "견적문의",
     value: "현장 방문 무료 견적",
+    to: "/quote",
     note: "현장 여건 확인 후 정확한 견적을 안내드립니다",
   },
 ]
@@ -55,6 +57,10 @@ export default function SupportPage() {
                   <a href={card.href} className="hover:text-primary">
                     {card.value}
                   </a>
+                ) : card.to ? (
+                  <Link to={card.to} className="hover:text-primary">
+                    {card.value}
+                  </Link>
                 ) : (
                   card.value
                 )}
