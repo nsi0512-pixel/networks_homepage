@@ -2,7 +2,7 @@
 
 공장·병원·학교 등 산업 및 공공시설을 위한 광통신·네트워크·CCTV 통합 인프라 구축 전문기업 홈페이지입니다.
 
-**배포 사이트 (메인)**: https://hanurinetworks.vercel.app — Vercel, 클린 URL(`/about` 형태)
+**배포 사이트 (메인)**: https://hanurinet.vercel.app — Vercel, 클린 URL(`/about` 형태)
 **배포 사이트 (보조)**: https://nsi0512-pixel.github.io/networks_homepage/ — GitHub Pages, 해시 URL(`/#/about` 형태)
 
 (GitHub repo: https://github.com/nsi0512-pixel/networks_homepage — `main` 브랜치에 푸시하면
@@ -32,6 +32,11 @@ Vercel과 [.github/workflows/deploy.yml](.github/workflows/deploy.yml)의 GitHub
   `shadow-[0_8px_24px_rgba(0,55,112,0.08),0_2px_6px_rgba(0,55,112,0.04)]`(level 2)
 - 폰트: 기본 300(thin), 버튼/캡션만 400. 헤드라인은 negative letter-spacing 유지
 - 마케팅 히어로에는 `GradientMesh` 컴포넌트(크림→라벤더→인디고→루비 톤 배경)를 항상 배치
+- 그림자는 `shadow-level-1`(기본) / `shadow-level-2`(호버·부상) 유틸리티 사용
+- 호버 효과: 카드는 `hover:-translate-y-0.5 hover:shadow-level-2`, 버튼은 `hover:-translate-y-px` +
+  `hover:bg-primary-deep` / `active:bg-primary-press`. 모두 `transition-all duration-200`
+- 모바일: 터치 영역 최소 44px(`min-h-11`), 섹션 여백은 `px-5 py-12 sm:px-6 sm:py-16 lg:py-24` 패턴,
+  입력 필드는 iOS 확대 방지를 위해 기본 16px(`text-base sm:text-[15px]`)
 
 ## 실행 방법
 
