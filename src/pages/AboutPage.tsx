@@ -2,7 +2,7 @@ import GreetingVisual from "../components/GreetingVisual"
 import PageHeader from "../components/PageHeader"
 
 const GREETING_PARAGRAPHS = [
-  "발빠르게 변화를 추구하는 한누리광통신을 방문해 주신 고객 여러분들께 진심으로 감사드립니다.",
+  "발빠르게 변화를 추구하는 하누리광통신을 방문해 주신 고객 여러분들께 진심으로 감사드립니다.",
   "저희는 깊은 현장 경험과 기술력, 노하우를 바탕으로 항상 고객과 함께한다는 이념으로 정진하고 있습니다.",
   "창조적인 역량으로 가득한 젊은 기업으로서 모든 임직원이 자유롭게 소통하고, 열정적인 마인드로 항상 새로운 가치를 만들어가고자 합니다.",
   "성실하고 건강한 마인드를 가진 인재들이 모여, 다양한 경험을 바탕으로 실패를 두려워하지 않는 도전정신으로 산업의 새로운 기준을 만들어가겠습니다.",
@@ -10,7 +10,7 @@ const GREETING_PARAGRAPHS = [
 ]
 
 const COMPANY_INFO = [
-  { label: "상호명", value: "한누리광통신" },
+  { label: "상호명", value: "하누리광통신" },
   { label: "대표", value: "문상필" },
   { label: "전화", value: "043-878-8888" },
   { label: "주소", value: "충북 음성군 음성읍 반기문로 45-15 상가동1층 101호" },
@@ -22,7 +22,7 @@ export default function AboutPage() {
       <PageHeader
         eyebrow="ABOUT US"
         title="회사소개"
-        description="한누리광통신은 광통신·네트워크·CCTV 통합 인프라 구축을 전문으로 하는 기업입니다. 공장·병원·학교 등 다양한 현장에서 축적한 시공 경험을 바탕으로 안정적인 통신 환경을 제공합니다."
+        description="하누리광통신은 광통신·네트워크·CCTV 통합 인프라 구축을 전문으로 하는 기업입니다. 공장·병원·학교 등 다양한 현장에서 축적한 시공 경험을 바탕으로 안정적인 통신 환경을 제공합니다."
       />
 
       <section className="mx-auto max-w-[1200px] px-5 py-12 sm:px-6 sm:py-16 lg:py-24">
@@ -32,7 +32,7 @@ export default function AboutPage() {
               GREETING · CEO MESSAGE
             </span>
             <h2 className="mt-5 break-keep text-[26px] font-light leading-[1.15] tracking-[-0.26px] text-ink sm:text-[32px] sm:tracking-[-0.64px]">
-              안녕하십니까, 한누리광통신입니다.
+              안녕하십니까, 하누리광통신입니다.
             </h2>
             <div className="mt-6 space-y-4">
               {GREETING_PARAGRAPHS.map((paragraph) => (

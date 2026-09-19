@@ -88,7 +88,7 @@ export default function SupportPage() {
 
           <div className="mt-8 overflow-hidden rounded-lg border border-hairline bg-canvas shadow-level-1">
             <iframe
-              title="한누리광통신 위치 지도"
+              title="하누리광통신 위치 지도"
               src={`https://maps.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&hl=ko&z=17&output=embed`}
               className="block h-[360px] w-full border-0 lg:h-[440px]"
               loading="lazy"

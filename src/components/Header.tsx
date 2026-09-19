@@ -35,7 +35,7 @@ export default function Header() {
           <LogoMark />
           <span className="flex flex-col leading-none">
             <span className="whitespace-nowrap text-[15px] font-normal tracking-tight text-ink">
-              한누리광통신
+              하누리광통신
             </span>
             <span className="whitespace-nowrap text-[10px] font-normal tracking-[0.1px] text-ink-mute-2">
               HANURI NETWORKS
