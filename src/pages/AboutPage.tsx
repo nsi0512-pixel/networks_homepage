@@ -47,8 +47,27 @@ export default function AboutPage() {
             <p className="mt-8 text-[15px] font-light text-ink">감사합니다.</p>
           </div>
 
-          <div className="aspect-square overflow-hidden rounded-lg">
-            <GreetingVisual />
+          <div className="space-y-4">
+            <div className="aspect-square overflow-hidden rounded-lg">
+              <GreetingVisual />
+            </div>
+
+            <div className="rounded-lg bg-canvas-soft p-5">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-primary-subdued px-2 py-1 text-[10px] font-normal tracking-[0.1px] text-primary-deep">
+                <svg width="11" height="11" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path d="M10 1.6l2.47 5.38 5.93.62-4.42 4.05 1.24 5.83L10 14.5l-5.22 2.98 1.24-5.83L1.6 7.6l5.93-.62L10 1.6z" />
+                </svg>
+                대한민국 신지식인
+              </span>
+              <p className="mt-3 break-keep text-[15px] font-normal leading-[1.4] text-ink">
+                제44회 중소기업 정보통신분야 신지식인 선정
+              </p>
+              <p className="mt-2 break-keep text-[13px] font-light leading-[1.5] text-ink-mute">
+                2025년 1월, 문상필 대표가 FTTX 장비 도입과 옥외형 EA·TBA 셋팅 등 기술개발로 방송·통신
+                분야의 혁신을 이끈 공로를 인정받아 한국신지식인협회 주관 인증식에서 선정됐습니다.
+                2022년에는 KT 우수기업상을 수상했습니다.
+              </p>
+            </div>
           </div>
         </div>
 

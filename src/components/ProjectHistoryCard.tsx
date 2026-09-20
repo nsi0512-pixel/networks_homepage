@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom"
 import ServiceVisual from "./ServiceVisual"
 
-const TAGS = ["정기 점검", "24시간 출동", "설비 개선/이설", "장애 복구"]
+const TAGS = ["관리자 선임 위탁", "반기별 정기점검", "선임신고 대행", "24시간 출동"]
 
 const STATS = [
-  { label: "긴급출동", value: "24시간" },
-  { label: "평균 출동", value: "30분" },
-  { label: "정기점검", value: "월 1회" },
+  { label: "대상 연면적", value: "5,000㎡↑" },
+  { label: "법정 점검", value: "반기 1회" },
+  { label: "미선임 과태료", value: "300만원" },
 ]
 
 export default function ProjectHistoryCard() {
@@ -27,18 +27,18 @@ export default function ProjectHistoryCard() {
           </span>
           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-6 pb-3 pt-8">
             <p className="text-[13px] font-normal tracking-[-0.39px] text-primary-subdued">
-              정기 점검 · 24시간 긴급 출동
+              연면적 5,000㎡ 이상 건축물 법정 선임 의무
             </p>
           </div>
         </div>
 
         <div className="p-6 sm:p-8">
-          <h3 className="text-[22px] font-light leading-[1.1] tracking-[-0.22px] text-ink">
-            정보통신설비 유지보수 전문업체
+          <h3 className="break-keep text-[22px] font-light leading-[1.1] tracking-[-0.22px] text-ink">
+            정보통신설비 유지보수·관리자 위탁 전문업체
           </h3>
-          <p className="mt-2 text-[15px] font-light leading-[1.4] text-ink-mute">
-            광케이블·네트워크·CCTV 설비를 정기적으로 점검하고 24시간 장애 출동 체계로
-            신속하게 복구하여 안정적인 통신 환경을 지속적으로 유지관리합니다.
+          <p className="mt-2 break-keep text-[15px] font-light leading-[1.4] text-ink-mute">
+            연면적 5,000㎡ 이상 건축물은 정보통신설비 유지보수·관리자를 선임해야 합니다.
+            정보통신공사업 등록업체인 하누리광통신에 위탁하시면 선임한 것으로 인정됩니다.
           </p>
 
           <div className="mt-4 flex flex-wrap gap-1.5">
@@ -67,10 +67,10 @@ export default function ProjectHistoryCard() {
           </div>
 
           <Link
-            to="/business"
+            to="/business#maintenance-guide"
             className="group mt-3 flex min-h-11 w-full items-center justify-center gap-1 text-[15px] font-light text-primary transition-colors hover:text-primary-deep"
           >
-            유지보수 서비스 보기
+            유지보수 제도 자세히 보기
             <svg
               width="14"
               height="14"

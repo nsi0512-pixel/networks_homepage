@@ -1,3 +1,4 @@
+import MaintenanceGuide from "../components/MaintenanceGuide"
 import PageHeader from "../components/PageHeader"
 import ServiceCard from "../components/ServiceCard"
 
@@ -47,6 +48,7 @@ export default function BusinessPage() {
           ))}
         </div>
       </div>
+      <MaintenanceGuide />
     </div>
   )
 }
