@@ -16,17 +16,18 @@ export default function Hero() {
       <div className="mx-auto grid max-w-[1200px] items-center gap-14 px-5 pb-16 pt-14 sm:px-6 sm:pb-20 sm:pt-20 lg:grid-cols-[1.1fr_1fr] lg:gap-12 lg:pb-28 lg:pt-28">
         <div>
           <span className="inline-flex items-center rounded-full bg-canvas/70 px-3 py-1.5 text-micro-cap font-normal text-primary-deep ring-1 ring-primary-subdued/70 backdrop-blur">
-            광통신 · 네트워크 · CCTV 통합 인프라
+            광통신 · 네트워크 · CCTV · 정보통신설비 유지보수
           </span>
 
           <h1 className="mt-7 break-keep text-[34px] leading-[1.2] font-light tracking-[-0.8px] text-ink sm:text-[44px] sm:leading-[1.16] sm:tracking-[-1px] lg:text-display-xl xl:text-display-xxl">
             산업·공공시설을 위한{" "}
-            <span className="text-primary">광통신·네트워크·CCTV</span> 통합 인프라 구축
+            <span className="text-primary">광통신·네트워크·CCTV</span> 구축·유지보수
             전문기업
           </h1>
 
           <p className="mt-7 max-w-xl break-keep text-base leading-[1.75] font-light text-ink-secondary sm:text-body-lg">
-            공장·병원·학교 등 다양한 현장에 최적화된 통신 및 보안 인프라를 구축합니다.
+            공장·병원·학교 등 다양한 현장에 최적화된 통신·보안 통합 인프라를 구축하고, 준공 후에도
+            정보통신설비 정기 점검과 유지보수·관리자 선임 위탁까지 책임집니다.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-3 sm:gap-4">

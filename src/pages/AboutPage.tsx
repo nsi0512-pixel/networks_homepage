@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import sinjisikinAward from "../assets/sinjisikin-award.jpg"
 import PageHeader from "../components/PageHeader"
 
@@ -16,13 +17,21 @@ const COMPANY_INFO = [
   { label: "주소", value: "충북 음성군 음성읍 반기문로 45-15 상가동1층 101호" },
 ]
 
+// 유지보수는 법정 선임 의무와 연결되는 핵심 사업이라 다크 네이비로 강조한다.
+const BUSINESS_AREAS = [
+  { label: "정보통신설비 유지보수·관리자 선임 위탁", to: "/business#maintenance-guide", featured: true },
+  { label: "광케이블 접속 및 포설", to: "/business", featured: false },
+  { label: "네트워크 공사", to: "/business", featured: false },
+  { label: "CCTV·통합 관제", to: "/business", featured: false },
+]
+
 export default function AboutPage() {
   return (
     <div>
       <PageHeader
         eyebrow="ABOUT US"
         title="회사소개"
-        description="하누리광통신은 광통신·네트워크·CCTV 통합 인프라 구축을 전문으로 하는 기업입니다. 공장·병원·학교 등 다양한 현장에서 축적한 시공 경험을 바탕으로 안정적인 통신 환경을 제공합니다."
+        description="하누리광통신은 광통신·네트워크·CCTV 통합 인프라 구축과 정보통신설비 유지보수를 전문으로 하는 기업입니다. 공장·병원·학교 등 다양한 현장에서 축적한 시공 경험을 바탕으로, 구축부터 정기 점검까지 안정적인 통신 환경을 책임집니다."
       />
 
       <section className="mx-auto max-w-[1200px] px-5 pb-16 sm:px-6 sm:pb-20 lg:pb-28">
@@ -91,6 +100,29 @@ export default function AboutPage() {
               </div>
             ))}
           </dl>
+
+          <div className="mt-8 border-t border-ink/10 pt-8">
+            <p className="text-caption font-normal text-ink-secondary">주요 사업</p>
+            <ul className="mt-3 flex flex-wrap gap-2">
+              {BUSINESS_AREAS.map((area) => (
+                <li key={area.label}>
+                  <Link
+                    to={area.to}
+                    className={`inline-flex min-h-10 items-center gap-1.5 rounded-full px-4 text-[14px] font-normal transition-all duration-200 hover:-translate-y-px ${
+                      area.featured
+                        ? "bg-brand-dark-900 text-on-primary shadow-level-1 hover:shadow-level-2"
+                        : "bg-canvas text-ink-secondary ring-1 ring-ink/10 hover:text-primary hover:ring-primary-subdued"
+                    }`}
+                  >
+                    {area.featured && (
+                      <span className="h-1.5 w-1.5 rounded-full bg-primary-soft" aria-hidden="true" />
+                    )}
+                    {area.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         <p className="mt-6 text-caption font-normal text-ink-mute">
