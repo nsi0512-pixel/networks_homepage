@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { LEGAL_PAGES } from "../content/legal"
 import LogoMark from "./LogoMark"
 
 const PHONE = "043-878-8888"
@@ -26,6 +27,13 @@ const LINK_GROUPS = [
       { label: "오시는길", to: "/support" },
     ],
   },
+]
+
+// 개인정보 처리 관련 링크는 관행대로 굵게 강조한다.
+const POLICY_LINKS = [
+  { label: LEGAL_PAGES.privacy.title, to: LEGAL_PAGES.privacy.path, emphasis: true },
+  { label: LEGAL_PAGES.terms.title, to: LEGAL_PAGES.terms.path, emphasis: false },
+  { label: LEGAL_PAGES.emailPolicy.title, to: LEGAL_PAGES.emailPolicy.path, emphasis: false },
 ]
 
 const LINK_CLASS =
@@ -83,7 +91,24 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-3 border-t border-hairline pt-8 text-caption font-light text-ink-mute sm:flex-row sm:items-center sm:justify-between">
+        <nav
+          aria-label="약관 및 정책"
+          className="mt-14 flex flex-wrap gap-x-6 gap-y-1 border-t border-hairline pt-6"
+        >
+          {POLICY_LINKS.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className={`inline-flex min-h-9 items-center text-caption transition-colors hover:text-primary ${
+                link.emphasis ? "font-normal text-ink" : "font-light text-ink-secondary"
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="mt-4 flex flex-col gap-3 text-caption font-light text-ink-mute sm:flex-row sm:items-center sm:justify-between">
           <p className="break-keep">
             하누리광통신 · 대표 문상필 · {ADDRESS}
           </p>

@@ -1,5 +1,7 @@
 import { useRef, useState } from "react"
+import { Link } from "react-router-dom"
 import PageHeader from "../components/PageHeader"
+import { LEGAL_PAGES } from "../content/legal"
 
 // TODO: 실제 견적 문의를 받을 회사 이메일로 교체 필요.
 const QUOTE_EMAIL = "hanurinetworks@example.com"
@@ -184,7 +186,34 @@ export default function QuotePage() {
             })}
           </div>
 
-          <div className="mt-12 flex flex-wrap items-center gap-5 border-t border-hairline pt-8">
+          <p className="mt-12 flex items-start gap-2.5 break-keep border-t border-hairline pt-8 text-caption font-light text-ink-mute">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              className="mt-[3px] shrink-0 text-primary-soft"
+              aria-hidden="true"
+            >
+              <rect x="4" y="9" width="12" height="8" rx="1.5" />
+              <path d="M7 9V6.5a3 3 0 016 0V9" strokeLinecap="round" />
+            </svg>
+            <span>
+              입력하신 정보는 견적 회신과 상담에만 사용되며, 문의 처리 완료 후 1년간 보관 후 파기됩니다. 자세한
+              내용은{" "}
+              <Link
+                to={LEGAL_PAGES.privacy.path}
+                className="font-normal text-primary underline decoration-primary/30 underline-offset-2 transition-colors hover:text-primary-deep hover:decoration-primary-deep"
+              >
+                {LEGAL_PAGES.privacy.title}
+              </Link>
+              에서 확인하실 수 있습니다.
+            </span>
+          </p>
+
+          <div className="mt-6 flex flex-wrap items-center gap-5">
             <button
               type="submit"
               className="btn-primary"
