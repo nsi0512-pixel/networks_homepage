@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import ServiceVisual from "./ServiceVisual"
+import maintenanceImage from "../assets/maintenance-server.png"
 
 const TAGS = ["관리자 선임 위탁", "반기별 정기점검", "선임신고 대행", "24시간 출동"]
 
@@ -21,7 +21,11 @@ export default function ProjectHistoryCard() {
 
       <div className="overflow-hidden rounded-lg border border-hairline bg-canvas shadow-level-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-level-2">
         <div className="relative aspect-video">
-          <ServiceVisual variant="maintenance" />
+          <img
+            src={maintenanceImage}
+            alt="서버 랙 정보통신설비 유지보수 작업"
+            className="h-full w-full object-cover"
+          />
           <span className="absolute right-3 top-3 rounded-full bg-canvas/15 px-2 py-1 text-[10px] font-normal tracking-[0.1px] text-on-primary backdrop-blur">
             유지보수 전문업체
           </span>

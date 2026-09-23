@@ -1,3 +1,7 @@
+import cctvImage from "../assets/cctv.jpg"
+import fiberImage from "../assets/fiber.jpg"
+import maintenanceImage from "../assets/maintenance-server.png"
+import networkImage from "../assets/network.jpg"
 import MaintenanceGuide from "../components/MaintenanceGuide"
 import PageHeader from "../components/PageHeader"
 import ServiceCard from "../components/ServiceCard"
@@ -9,6 +13,7 @@ const SERVICES = [
     description:
       "정기 점검과 24시간 장애 출동 체계로 광케이블·네트워크·CCTV 설비를 안정적으로 유지관리합니다.",
     tags: ["정기 점검", "24시간 출동", "설비 개선/이설"],
+    image: maintenanceImage,
   },
   {
     variant: "fiber" as const,
@@ -16,6 +21,8 @@ const SERVICES = [
     description:
       "단일모드·다중모드 광케이블 융착접속과 최적 배선 경로 설계로 손실 없는 고품질 광통신망을 구축합니다.",
     tags: ["광케이블 포설", "융착접속", "선로 인입"],
+    image: fiberImage,
+    imagePosition: "80% center",
   },
   {
     variant: "network" as const,
@@ -23,6 +30,8 @@ const SERVICES = [
     description:
       "UTP·FTP 구조화 배선부터 스위치·랙 구성, 유무선 AP 설치까지 건물 전체를 아우르는 네트워크 인프라를 설계·시공합니다.",
     tags: ["구조화 배선", "스위치/랙 구성", "Wi-Fi AP 구축"],
+    image: networkImage,
+    imagePosition: "75% center",
   },
   {
     variant: "cctv" as const,
@@ -30,6 +39,8 @@ const SERVICES = [
     description:
       "설계·시공부터 통합 관제실 구성까지, 지능형 IP CCTV로 24시간 실시간 감시와 원격 모니터링 체계를 구축합니다.",
     tags: ["IP CCTV 설치", "통합 관제실", "원격 모니터링"],
+    image: cctvImage,
+    imagePosition: "18% center",
   },
 ]
 

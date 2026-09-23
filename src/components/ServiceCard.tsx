@@ -5,14 +5,32 @@ interface ServiceCardProps {
   title: string
   description: string
   tags: string[]
+  image?: string
+  imagePosition?: string
 }
 
-export default function ServiceCard({ variant, title, description, tags }: ServiceCardProps) {
+export default function ServiceCard({
+  variant,
+  title,
+  description,
+  tags,
+  image,
+  imagePosition = "center",
+}: ServiceCardProps) {
   return (
     <div className="group overflow-hidden rounded-lg border border-hairline bg-canvas shadow-level-1 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary-subdued hover:shadow-level-2">
       <div className="aspect-[4/3] w-full overflow-hidden">
         <div className="h-full w-full transition-transform duration-300 group-hover:scale-105">
-          <ServiceVisual variant={variant} />
+          {image ? (
+            <img
+              src={image}
+              alt={title}
+              className="h-full w-full object-cover"
+              style={{ objectPosition: imagePosition }}
+            />
+          ) : (
+            <ServiceVisual variant={variant} />
+          )}
         </div>
       </div>
       <div className="p-6 sm:p-8">
