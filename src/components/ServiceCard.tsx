@@ -7,6 +7,7 @@ interface ServiceCardProps {
   tags: string[]
   image?: string
   imagePosition?: string
+  index?: number
 }
 
 export default function ServiceCard({
@@ -16,11 +17,12 @@ export default function ServiceCard({
   tags,
   image,
   imagePosition = "center",
+  index,
 }: ServiceCardProps) {
   return (
-    <div className="group overflow-hidden rounded-lg border border-hairline bg-canvas shadow-level-1 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary-subdued hover:shadow-level-2">
-      <div className="aspect-[4/3] w-full overflow-hidden">
-        <div className="h-full w-full transition-transform duration-300 group-hover:scale-105">
+    <div className="card card-hover group flex flex-col overflow-hidden">
+      <div className="relative aspect-[4/3] w-full overflow-hidden">
+        <div className="h-full w-full transition-transform duration-500 ease-out group-hover:scale-105">
           {image ? (
             <img
               src={image}
@@ -32,18 +34,22 @@ export default function ServiceCard({
             <ServiceVisual variant={variant} />
           )}
         </div>
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-brand-dark-900/25 to-transparent" />
       </div>
-      <div className="p-6 sm:p-8">
-        <h3 className="text-[20px] font-light leading-[1.4] tracking-[-0.2px] text-ink">{title}</h3>
-        <p className="mt-2 break-keep text-[15px] font-light leading-[1.4] text-ink-mute">
-          {description}
-        </p>
-        <div className="mt-4 flex flex-wrap gap-1.5">
+      <div className="flex flex-1 flex-col p-7 sm:p-8">
+        {index !== undefined && (
+          <span
+            className="text-caption font-normal text-primary"
+            style={{ fontFeatureSettings: '"tnum"' }}
+          >
+            {String(index + 1).padStart(2, "0")}
+          </span>
+        )}
+        <h3 className="mt-2 break-keep text-heading-lg font-light text-ink">{title}</h3>
+        <p className="mt-3 break-keep text-body-md font-light text-ink-mute">{description}</p>
+        <div className="mt-auto flex flex-wrap gap-1.5 pt-6">
           {tags.map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full bg-primary-subdued px-2 py-1 text-[10px] font-normal tracking-[0.1px] text-primary-deep"
-            >
+            <span key={tag} className="tag">
               {tag}
             </span>
           ))}

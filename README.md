@@ -27,15 +27,20 @@ Vercel과 [.github/workflows/deploy.yml](.github/workflows/deploy.yml)의 GitHub
 
 **앞으로 새 페이지/컴포넌트를 추가할 때도 반드시 이 토큰만 사용하세요.**
 - 색상: `bg-primary`, `text-ink`, `bg-canvas-soft`, `border-hairline` 등 (임의의 색상 추가 금지)
-- 버튼: 항상 pill 형태(`rounded-full`), padding `py-2 px-4`
-- 카드: `rounded-lg`(12px), `border-hairline`, 그림자는 `shadow-[0_1px_3px_rgba(0,55,112,0.08)]`(level 1) 또는
-  `shadow-[0_8px_24px_rgba(0,55,112,0.08),0_2px_6px_rgba(0,55,112,0.04)]`(level 2)
+- 공통 유틸리티([src/index.css](src/index.css)): `btn-primary` / `btn-secondary`(pill 버튼), `card` + `card-hover`
+  (피처 카드), `tag`(pill-tag-soft), `eyebrow`(섹션 머리말 — 인디고 글자, 알약 아님). 새 요소는 이것부터 쓰고,
+  같은 속성을 덮어써야 하면 유틸리티 대신 클래스를 직접 풀어 쓸 것(우선순위 충돌 방지)
+- 타이포: `text-display-xxl/xl/lg/md`, `text-heading-lg/md`, `text-body-lg/md`, `text-caption`, `text-micro-cap`
+  토큰 사용. 섹션 제목은 `text-display-md sm:text-display-lg lg:text-display-xl`, 본문 행간은 1.7 이상
+- 카드: `rounded-lg`(12px), 큰 패널(히어로 카드·다크 밴드·폼)은 `rounded-xl`(16px)
 - 폰트: 기본 300(thin), 버튼/캡션만 400. 헤드라인은 negative letter-spacing 유지
-- 마케팅 히어로에는 `GradientMesh` 컴포넌트(크림→라벤더→인디고→루비 톤 배경)를 항상 배치
-- 그림자는 `shadow-level-1`(기본) / `shadow-level-2`(호버·부상) 유틸리티 사용
-- 호버 효과: 카드는 `hover:-translate-y-0.5 hover:shadow-level-2`, 버튼은 `hover:-translate-y-px` +
-  `hover:bg-primary-deep` / `active:bg-primary-press`. 모두 `transition-all duration-200`
-- 모바일: 터치 영역 최소 44px(`min-h-11`), 섹션 여백은 `px-5 py-12 sm:px-6 sm:py-16 lg:py-24` 패턴,
+- 마케팅 히어로·페이지 헤더에는 `GradientMesh`(크림→라벤더→인디고→루비 톤 배경)를 항상 배치. 아래쪽은 마스크로
+  흰 캔버스에 녹아든다
+- 그림자는 `shadow-level-1`(기본) / `shadow-level-2`(호버·부상) / `shadow-level-3`(떠 있는 패널) 유틸리티 사용
+- 색 리듬: 흰 캔버스 ↔ `bg-canvas-soft` 밴드 사이에 `bg-canvas-cream`(따뜻한 쉼표)과
+  `bg-brand-dark-900`(강조 카드·다크 밴드)을 섞는다. 루비는 과태료·긴급처럼 경고 성격에만
+- 호버 효과: 카드는 `card-hover`, 버튼은 `btn-*` 유틸리티에 포함. 모두 `transition-all duration-200`
+- 모바일: 터치 영역 최소 44px(`min-h-11`), 섹션 여백은 `px-5 py-16 sm:px-6 sm:py-20 lg:py-28` 패턴,
   입력 필드는 iOS 확대 방지를 위해 기본 16px(`text-base sm:text-[15px]`)
 
 ## 실행 방법

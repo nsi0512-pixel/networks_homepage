@@ -29,6 +29,39 @@
   --color-lemon: #9b6829;
   --color-shadow-blue: #003770;
 
+  /*
+    Type scale (DESIGN.md typography). 한글은 라틴 글자보다 세로로 꽉 차 보이므로
+    display/body 행간을 원본보다 조금 넉넉하게 잡는다. 굵기는 300 유지.
+  */
+  --text-display-xxl: 56px;
+  --text-display-xxl--line-height: 1.12;
+  --text-display-xxl--letter-spacing: -1.4px;
+  --text-display-xl: 48px;
+  --text-display-xl--line-height: 1.18;
+  --text-display-xl--letter-spacing: -0.96px;
+  --text-display-lg: 32px;
+  --text-display-lg--line-height: 1.25;
+  --text-display-lg--letter-spacing: -0.64px;
+  --text-display-md: 26px;
+  --text-display-md--line-height: 1.25;
+  --text-display-md--letter-spacing: -0.26px;
+  --text-heading-lg: 22px;
+  --text-heading-lg--line-height: 1.35;
+  --text-heading-lg--letter-spacing: -0.22px;
+  --text-heading-md: 20px;
+  --text-heading-md--line-height: 1.4;
+  --text-heading-md--letter-spacing: -0.2px;
+  --text-body-lg: 17px;
+  --text-body-lg--line-height: 1.75;
+  --text-body-md: 15px;
+  --text-body-md--line-height: 1.7;
+  --text-caption: 13px;
+  --text-caption--line-height: 1.6;
+  --text-caption--letter-spacing: -0.13px;
+  --text-micro-cap: 11px;
+  --text-micro-cap--line-height: 1;
+  --text-micro-cap--letter-spacing: 0.1px;
+
   /* radius */
   --radius-xs: 4px;
   --radius-sm: 6px;
@@ -37,9 +70,40 @@
   --radius-xl: 16px;
   --radius-pill: 9999px;
 
-  /* elevation (exposed as shadow-level-1 / shadow-level-2 utilities) */
+  /* elevation (exposed as shadow-level-1 / shadow-level-2 / shadow-level-3 utilities) */
   --shadow-level-1: 0 1px 3px rgba(0, 55, 112, 0.08);
   --shadow-level-2: 0 8px 24px rgba(0, 55, 112, 0.08), 0 2px 6px rgba(0, 55, 112, 0.04);
+  /* 히어로 카드·다크 밴드처럼 화면 위에 '떠 있는' 패널 전용 */
+  --shadow-level-3: 0 30px 60px -12px rgba(0, 55, 112, 0.18), 0 18px 36px -18px rgba(0, 55, 112, 0.22);
+}
+
+/* 섹션 머리말: 알약 대신 인디고 글자로 두어 태그 알약과 역할을 구분한다. */
+@utility eyebrow {
+  @apply inline-flex items-center gap-2 text-caption font-normal tracking-[0.6px] text-primary;
+}
+
+/* pill-tag-soft */
+@utility tag {
+  @apply inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-primary-subdued/45 px-2.5 py-1.5 text-micro-cap font-normal text-primary-deep;
+}
+
+/* button-primary-pill */
+@utility btn-primary {
+  @apply inline-flex min-h-11 items-center justify-center gap-1.5 whitespace-nowrap rounded-full bg-primary px-5 py-2.5 text-base leading-none font-normal text-on-primary shadow-[0_1px_2px_rgba(0,55,112,0.16),inset_0_1px_0_rgba(255,255,255,0.14)] transition-all duration-200 hover:-translate-y-px hover:bg-primary-deep hover:shadow-level-2 active:translate-y-0 active:bg-primary-press;
+}
+
+/* button-secondary */
+@utility btn-secondary {
+  @apply inline-flex min-h-11 items-center justify-center gap-1.5 whitespace-nowrap rounded-full border border-primary bg-canvas px-5 py-2.5 text-base leading-none font-normal text-primary transition-all duration-200 hover:-translate-y-px hover:bg-primary-subdued/25 active:translate-y-0;
+}
+
+/* card-feature-light */
+@utility card {
+  @apply rounded-lg border border-hairline bg-canvas shadow-level-1;
+}
+
+@utility card-hover {
+  @apply transition-all duration-200 hover:-translate-y-0.5 hover:border-primary-subdued/70 hover:shadow-level-2;
 }
 
 html {
@@ -67,4 +131,11 @@ body {
   font-feature-settings: "ss01";
   color: var(--color-ink);
   background-color: var(--color-canvas);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--color-primary-subdued) 60%, transparent);
+  color: var(--color-ink);
 }

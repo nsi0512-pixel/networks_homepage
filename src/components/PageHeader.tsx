@@ -1,3 +1,5 @@
+import GradientMesh from "./GradientMesh"
+
 interface PageHeaderProps {
   eyebrow: string
   title: string
@@ -6,15 +8,14 @@ interface PageHeaderProps {
 
 export default function PageHeader({ eyebrow, title, description }: PageHeaderProps) {
   return (
-    <div className="border-b border-hairline bg-canvas-soft">
-      <div className="mx-auto max-w-[1200px] px-5 py-12 sm:px-6 sm:py-16 lg:py-20">
-        <span className="inline-flex items-center gap-1.5 rounded-full bg-primary-subdued px-2 py-1 text-[10px] font-normal tracking-[0.1px] text-primary-deep">
-          {eyebrow}
-        </span>
-        <h1 className="mt-5 break-keep text-[32px] font-light leading-[1.1] tracking-[-0.64px] text-ink">
+    <div className="relative isolate overflow-hidden">
+      <GradientMesh className="h-full opacity-80" />
+      <div className="mx-auto max-w-[1200px] px-5 pb-12 pt-14 sm:px-6 sm:pb-16 sm:pt-20 lg:pb-20 lg:pt-28">
+        <span className="eyebrow">{eyebrow}</span>
+        <h1 className="mt-4 break-keep text-[34px] leading-[1.2] font-light tracking-[-0.8px] text-ink sm:text-display-xl">
           {title}
         </h1>
-        <p className="mt-4 max-w-2xl break-keep text-base font-light leading-[1.4] text-ink-secondary">
+        <p className="mt-5 max-w-2xl break-keep text-base leading-[1.75] font-light text-ink-secondary sm:text-body-lg">
           {description}
         </p>
       </div>

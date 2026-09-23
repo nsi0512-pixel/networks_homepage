@@ -39,18 +39,32 @@ export default function SupportPage() {
         description="견적 문의, A/S 및 기타 문의사항은 아래 연락처로 연락해 주세요. 현장 상황에 맞는 최적의 시공 방안을 안내해 드립니다."
       />
 
-      <section className="mx-auto max-w-[1200px] px-5 py-12 sm:px-6 sm:py-16 lg:py-24">
+      <section className="mx-auto max-w-[1200px] px-5 pb-16 sm:px-6 sm:pb-20 lg:pb-28">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {CONTACT_CARDS.map((card) => (
+          {CONTACT_CARDS.map((card) => {
+            // 24시간 긴급 A/S는 card-pricing-featured처럼 다크 네이비로 뒤집어 강조한다.
+            const featured = !card.href && !card.to
+            return (
             <div
               key={card.label}
-              className="rounded-lg border border-hairline bg-canvas p-6 shadow-level-1 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary-subdued hover:shadow-level-2 sm:p-8"
+              className={`rounded-lg p-7 transition-all duration-200 hover:-translate-y-0.5 sm:p-8 ${
+                featured
+                  ? "bg-brand-dark-900 text-on-primary shadow-level-3"
+                  : "card hover:border-primary-subdued/70 hover:shadow-level-2"
+              }`}
             >
-              <span className="inline-flex items-center rounded-full bg-primary-subdued px-2 py-1 text-[10px] font-normal tracking-[0.1px] text-primary-deep">
+              <span
+                className={
+                  featured
+                    ? "inline-flex items-center gap-1.5 rounded-full bg-on-primary/10 px-2.5 py-1.5 text-micro-cap font-normal text-primary-subdued ring-1 ring-on-primary/15"
+                    : "tag"
+                }
+              >
+                {featured && <span className="h-1.5 w-1.5 rounded-full bg-ruby" />}
                 {card.label}
               </span>
               <p
-                className="mt-4 break-keep text-[20px] font-light leading-[1.4] tracking-[-0.2px] text-ink"
+                className={`mt-5 break-keep text-display-md font-light ${featured ? "text-on-primary" : "text-ink"}`}
                 style={{ fontFeatureSettings: '"tnum"' }}
               >
                 {card.href ? (
@@ -71,22 +85,23 @@ export default function SupportPage() {
                   <span className="inline-flex min-h-11 items-center">{card.value}</span>
                 )}
               </p>
-              <p className="mt-2 break-keep text-[13px] font-normal tracking-[-0.39px] text-ink-mute">
+              <p className={`mt-2 break-keep text-caption font-normal ${featured ? "text-primary-subdued" : "text-ink-mute"}`}>
                 {card.note}
               </p>
             </div>
-          ))}
+            )
+          })}
         </div>
 
-        <div className="mt-16">
-          <span className="inline-flex items-center rounded-full bg-primary-subdued px-2 py-1 text-[10px] font-normal tracking-[0.1px] text-primary-deep">
+        <div className="mt-20 lg:mt-28">
+          <span className="eyebrow">
             DIRECTIONS
           </span>
-          <h2 className="mt-5 break-keep text-[26px] font-light leading-[1.15] tracking-[-0.26px] text-ink sm:text-[32px] sm:tracking-[-0.64px]">
+          <h2 className="mt-4 break-keep text-display-md font-light text-ink sm:text-display-lg lg:text-display-xl">
             오시는길
           </h2>
 
-          <div className="mt-8 overflow-hidden rounded-lg border border-hairline bg-canvas shadow-level-1">
+          <div className="mt-10 overflow-hidden rounded-xl border border-hairline bg-canvas shadow-level-2">
             <iframe
               title="하누리광통신 위치 지도"
               src={`https://maps.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&hl=ko&z=17&output=embed`}
@@ -95,17 +110,17 @@ export default function SupportPage() {
               referrerPolicy="no-referrer-when-downgrade"
             />
 
-            <dl className="grid gap-6 border-t border-hairline p-6 sm:grid-cols-2 sm:p-8">
+            <dl className="grid gap-6 border-t border-hairline p-7 sm:grid-cols-2 sm:p-10">
               <div>
-                <dt className="text-[13px] font-normal tracking-[-0.39px] text-ink-mute">주소</dt>
-                <dd className="mt-1 break-keep text-[15px] font-light leading-[1.4] text-ink">
+                <dt className="text-caption font-normal text-ink-mute">주소</dt>
+                <dd className="mt-1.5 break-keep text-body-md font-light text-ink">
                   {ADDRESS}
                 </dd>
               </div>
               <div>
-                <dt className="text-[13px] font-normal tracking-[-0.39px] text-ink-mute">대표번호</dt>
+                <dt className="text-caption font-normal text-ink-mute">대표번호</dt>
                 <dd
-                  className="mt-1 text-[15px] font-light leading-[1.4] text-ink"
+                  className="mt-0.5 text-body-md font-light text-ink"
                   style={{ fontFeatureSettings: '"tnum"' }}
                 >
                   <a
@@ -126,7 +141,7 @@ export default function SupportPage() {
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex min-h-11 items-center rounded-full border border-primary bg-canvas px-5 py-2.5 text-base font-normal text-primary transition-all duration-200 hover:-translate-y-px hover:bg-primary-subdued/30 active:translate-y-0"
+                className="btn-secondary"
               >
                 {link.label}
               </a>

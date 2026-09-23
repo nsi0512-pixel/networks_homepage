@@ -110,25 +110,25 @@ export default function QuotePage() {
         description="현장 상황을 알려주시면 담당자가 확인 후 연락드립니다. 급한 문의는 대표전화로 연락 주세요."
       />
 
-      <section className="mx-auto max-w-[760px] px-5 py-12 sm:px-6 sm:py-16 lg:py-24">
+      <section className="mx-auto max-w-[760px] px-5 pb-16 sm:px-6 sm:pb-20 lg:pb-28">
         <form
           onSubmit={handleSubmit}
           noValidate
-          className="rounded-lg border border-hairline bg-canvas p-6 shadow-level-1 sm:p-8 lg:p-12"
+          className="rounded-xl border border-hairline bg-canvas p-7 shadow-level-2 sm:p-10 lg:p-14"
         >
-          <div className="space-y-6">
+          <div className="space-y-7">
             {FIELDS.map((field) => {
               const error = errors[field.name]
               // 모바일 Safari가 16px 미만 입력 필드에 포커스할 때 화면을 확대해버리므로 기본 16px.
-              const inputClass = `w-full min-h-10 rounded-sm border bg-canvas px-3 py-2.5 text-base font-light leading-[1.4] text-ink outline-none transition-colors placeholder:text-ink-mute/60 sm:text-[15px] ${
-                error ? "border-ruby" : "border-hairline-input hover:border-primary-soft focus:border-primary"
+              const inputClass = `w-full min-h-11 rounded-sm border bg-canvas px-3.5 py-2.5 text-base font-light leading-[1.6] text-ink shadow-[inset_0_1px_2px_rgba(0,55,112,0.04)] outline-none transition-all duration-150 placeholder:text-ink-mute/60 focus:ring-4 sm:text-[15px] ${
+                error ? "border-ruby focus:ring-ruby/10" : "border-hairline-input hover:border-primary-soft focus:border-primary focus:ring-primary/10"
               }`
 
               return (
                 <div key={field.name}>
                   <label
                     htmlFor={field.name}
-                    className="flex items-center gap-1 text-[13px] font-normal tracking-[-0.39px] text-ink-mute"
+                    className="flex items-center gap-1 text-[14px] font-normal text-ink-secondary"
                   >
                     {field.label}
                     <span className="text-ruby" aria-hidden="true">
@@ -174,7 +174,7 @@ export default function QuotePage() {
                   {error && (
                     <p
                       id={`${field.name}-error`}
-                      className="mt-1.5 text-[13px] font-normal tracking-[-0.39px] text-ruby"
+                      className="mt-2 text-caption font-normal text-ruby"
                     >
                       {error}
                     </p>
@@ -184,14 +184,14 @@ export default function QuotePage() {
             })}
           </div>
 
-          <div className="mt-10 flex flex-wrap items-center gap-4 border-t border-hairline pt-8">
+          <div className="mt-12 flex flex-wrap items-center gap-5 border-t border-hairline pt-8">
             <button
               type="submit"
-              className="inline-flex min-h-11 items-center rounded-full bg-primary px-5 py-2.5 text-base font-normal text-on-primary shadow-level-1 transition-all duration-200 hover:-translate-y-px hover:bg-primary-deep hover:shadow-level-2 active:translate-y-0 active:bg-primary-press"
+              className="btn-primary"
             >
               문의 보내기
             </button>
-            <p className="text-[13px] font-normal tracking-[-0.39px] text-ink-mute">
+            <p className="text-caption font-normal text-ink-mute">
               전화 문의{" "}
               <a
                 href={`tel:${PHONE}`}
@@ -203,7 +203,7 @@ export default function QuotePage() {
           </div>
 
           {sent && (
-            <p className="mt-6 rounded-md bg-canvas-soft p-4 text-[15px] font-light leading-[1.4] text-ink-secondary">
+            <p className="mt-6 rounded-md border-l-2 border-primary bg-canvas-soft p-5 text-body-md font-light text-ink-secondary">
               메일 작성 창이 열렸습니다. 내용을 확인하신 뒤 전송해 주세요. 창이 열리지 않으면 대표전화로
               연락 주시기 바랍니다.
             </p>

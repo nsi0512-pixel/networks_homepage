@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom"
+import Footer from "./components/Footer"
 import Header from "./components/Header"
 import ScrollToTop from "./components/ScrollToTop"
 import AboutPage from "./pages/AboutPage"
@@ -19,6 +20,7 @@ function App() {
         <Route path="/support" element={<SupportPage />} />
         <Route path="/quote" element={<QuotePage />} />
       </Routes>
+      <Footer />
     </div>
   )
 }

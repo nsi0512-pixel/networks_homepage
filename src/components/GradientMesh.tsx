@@ -1,11 +1,16 @@
 /**
  * Signature atmospheric gradient-mesh backdrop (DESIGN.md: "non-negotiable on marketing heroes").
  * Organic blurred blobs washed left-to-right: cream -> lemon -> lavender -> indigo -> ruby.
+ * 아래쪽은 마스크로 흰 캔버스에 자연스럽게 녹아들어 섹션 경계가 칼로 자른 듯 보이지 않게 한다.
  */
-export default function GradientMesh() {
+export default function GradientMesh({
+  className = "h-[420px] sm:h-[520px] lg:h-[640px]",
+}: {
+  className?: string
+}) {
   return (
     <svg
-      className="absolute inset-x-0 top-0 -z-10 h-[380px] w-full sm:h-[460px] lg:h-[560px]"
+      className={`pointer-events-none absolute inset-x-0 top-0 -z-10 w-full [mask-image:linear-gradient(to_bottom,black_55%,transparent)] ${className}`}
       viewBox="0 0 1440 560"
       preserveAspectRatio="xMidYMin slice"
       aria-hidden="true"

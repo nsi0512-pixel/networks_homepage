@@ -25,29 +25,29 @@ export default function AboutPage() {
         description="하누리광통신은 광통신·네트워크·CCTV 통합 인프라 구축을 전문으로 하는 기업입니다. 공장·병원·학교 등 다양한 현장에서 축적한 시공 경험을 바탕으로 안정적인 통신 환경을 제공합니다."
       />
 
-      <section className="mx-auto max-w-[1200px] px-5 py-12 sm:px-6 sm:py-16 lg:py-24">
-        <div className="grid gap-10 overflow-hidden rounded-lg border border-hairline bg-canvas p-6 shadow-level-1 sm:p-8 lg:grid-cols-[1fr_320px] lg:gap-14 lg:p-12">
+      <section className="mx-auto max-w-[1200px] px-5 pb-16 sm:px-6 sm:pb-20 lg:pb-28">
+        <div className="grid gap-12 overflow-hidden rounded-lg border border-hairline bg-canvas p-7 shadow-level-2 sm:p-10 lg:grid-cols-[1fr_340px] lg:gap-16 lg:p-14">
           <div>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-primary-subdued px-2 py-1 text-[10px] font-normal tracking-[0.1px] text-primary-deep">
+            <span className="eyebrow">
               GREETING · CEO MESSAGE
             </span>
-            <h2 className="mt-5 break-keep text-[26px] font-light leading-[1.15] tracking-[-0.26px] text-ink sm:text-[32px] sm:tracking-[-0.64px]">
+            <h2 className="mt-5 break-keep text-display-md font-light text-ink sm:text-display-lg">
               안녕하십니까, 하누리광통신입니다.
             </h2>
-            <div className="mt-6 space-y-4">
+            <div className="mt-8 space-y-5">
               {GREETING_PARAGRAPHS.map((paragraph) => (
                 <p
                   key={paragraph}
-                  className="break-keep text-[15px] font-light leading-[1.4] text-ink-secondary"
+                  className="break-keep text-base leading-[1.85] font-light text-ink-secondary sm:text-body-lg sm:leading-[1.85]"
                 >
                   {paragraph}
                 </p>
               ))}
             </div>
-            <p className="mt-8 text-[15px] font-light text-ink">감사합니다.</p>
+            <p className="mt-10 text-body-lg font-light text-ink">감사합니다.</p>
           </div>
 
-          <div className="overflow-hidden rounded-lg bg-canvas-soft self-start">
+          <div className="self-start overflow-hidden rounded-lg bg-canvas-soft ring-1 ring-hairline">
             <img
               src={sinjisikinAward}
               alt="제44회 신지식인 인증식에서 인증서를 들고 있는 하누리광통신 문상필 대표"
@@ -56,8 +56,8 @@ export default function AboutPage() {
               loading="lazy"
               className="block aspect-[3/2] w-full object-cover"
             />
-            <div className="p-5">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-primary-subdued px-2 py-1 text-[10px] font-normal tracking-[0.1px] text-primary-deep">
+            <div className="p-6">
+              <span className="tag">
                 <svg width="11" height="11" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                   <path d="M10 1.6l2.47 5.38 5.93.62-4.42 4.05 1.24 5.83L10 14.5l-5.22 2.98 1.24-5.83L1.6 7.6l5.93-.62L10 1.6z" />
                 </svg>
@@ -66,7 +66,7 @@ export default function AboutPage() {
               <p className="mt-3 break-keep text-[15px] font-normal leading-[1.4] text-ink">
                 제44회 중소기업 정보통신분야 신지식인 선정
               </p>
-              <p className="mt-2 break-keep text-[13px] font-light leading-[1.5] text-ink-mute">
+              <p className="mt-2 break-keep text-caption font-light text-ink-mute">
                 2025년 1월, 문상필 대표가 FTTX 장비 도입과 옥외형 EA·TBA 셋팅 등 기술개발로 방송·통신
                 분야의 혁신을 이끈 공로를 인정받아 한국신지식인협회 주관 인증식에서 선정됐습니다.
                 2022년에는 KT 우수기업상을 수상했습니다.
@@ -78,14 +78,14 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="mt-6 rounded-lg border border-hairline bg-canvas-soft p-6 sm:p-8">
-          <dl className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-6 rounded-lg bg-canvas-cream p-7 sm:p-10">
+          <dl className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {COMPANY_INFO.map((item) => (
               <div key={item.label}>
-                <dt className="text-[13px] font-normal tracking-[-0.39px] text-ink-mute">
+                <dt className="text-caption font-normal text-ink-secondary">
                   {item.label}
                 </dt>
-                <dd className="mt-1 break-keep text-[15px] font-light leading-[1.4] text-ink">
+                <dd className="mt-2 break-keep text-body-md font-light text-ink">
                   {item.value}
                 </dd>
               </div>
@@ -93,7 +93,7 @@ export default function AboutPage() {
           </dl>
         </div>
 
-        <p className="mt-6 text-[13px] font-normal tracking-[-0.39px] text-ink-mute">
+        <p className="mt-6 text-caption font-normal text-ink-mute">
           회사 연혁, 보유 인증 등 추가 콘텐츠는 준비 중입니다.
         </p>
       </section>
